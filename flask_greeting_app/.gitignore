@@ -1,0 +1,110 @@
+# Flask Greeting Application - .gitignore
+# Generated for Month 3: Introduction to Flask Learning Project
+
+# Virtual Environment
+flask_env/
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Python Cache Files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Flask specific
+instance/
+.webassets-cache
+
+# Environment Variables (if you create a .env file later)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System Files
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# Logs
+*.log
+logs/
+
+# Database files (if you add a database later)
+*.db
+*.sqlite
+*.sqlite3
+
+# Flask session files
+flask_session/
+
+# Coverage reports (if you add testing later)
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook checkpoints (if you use notebooks)
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Secret keys and sensitive config (IMPORTANT!)
+config.py
+secrets.txt
+.secrets
+
+# Temporary files
+*.tmp
+*.temp
+
+# Flask debug files
+.flaskenv

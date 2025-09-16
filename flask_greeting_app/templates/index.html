@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome - Flask Greeting App{% endblock %}
+
+{% block content %}
+<h1>🌟 Welcome to Flask Greeting App! 🌟</h1>
+
+<p style="text-align: center; margin-bottom: 2rem; color: #666; font-size: 1.1rem;">
+    Enter your name below and choose your preferred greeting style to receive a personalized welcome message!
+</p>
+
+{% if error %}
+<div class="error">
+    <strong>Oops!</strong> {{ error }}
+</div>
+{% endif %}
+
+<form action="{{ url_for('greet') }}" method="POST">
+    <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" 
+               id="name" 
+               name="name" 
+               placeholder="Enter your full name..." 
+               required
+               value="{{ request.form.name if request.form else '' }}">
+    </div>
+    
+    <div class="form-group">
+        <label for="greeting_type">Greeting Style:</label>
+        <select id="greeting_type" name="greeting_type">
+            <option value="hello" {% if request.form and request.form.greeting_type == 'hello' %}selected{% endif %}>
+                Standard Hello
+            </option>
+            <option value="formal" {% if request.form and request.form.greeting_type == 'formal' %}selected{% endif %}>
+                Formal Greeting
+            </option>
+            <option value="casual" {% if request.form and request.form.greeting_type == 'casual' %}selected{% endif %}>
+                Casual & Friendly
+            </option>
+            <option value="time_based" {% if request.form and request.form.greeting_type == 'time_based' %}selected{% endif %}>
+                Time-Based Greeting
+            </option>
+            <option value="enthusiastic" {% if request.form and request.form.greeting_type == 'enthusiastic' %}selected{% endif %}>
+                Enthusiastic Welcome
+            </option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn">Generate My Personalized Greeting! 🎉</button>
+</form>
+
+<div style="margin-top: 2rem; padding: 1rem; background: rgba(102, 126, 234, 0.1); border-radius: 8px;">
+    <h3 style="color: #333; margin-bottom: 1rem;">🚀 What You'll Learn:</h3>
+    <ul style="color: #666; line-height: 1.6;">
+        <li><strong>Flask Routing:</strong> How URLs map to Python functions</li>
+        <li><strong>HTML Forms:</strong> Collecting user input through web forms</li>
+        <li><strong>Jinja2 Templates:</strong> Dynamic content rendering with template inheritance</li>
+        <li><strong>Form Handling:</strong> Processing POST requests and form validation</li>
+    </ul>
+</div>
+{% endblock %}

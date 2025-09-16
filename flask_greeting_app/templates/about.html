@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}About - Flask Greeting App{% endblock %}
+
+{% block content %}
+<h1>📚 About This Flask Application</h1>
+
+<div style="line-height: 1.6; color: #555;">
+    <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+        This Flask application demonstrates core web development concepts including routing, form handling, 
+        template rendering, and dynamic content generation. It's designed as a learning project for 
+        <strong>Month 3: Introduction to Flask</strong>.
+    </p>
+</div>
+
+<div style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin: 2rem 0;">
+    <div style="background: rgba(102, 126, 234, 0.1); padding: 1.5rem; border-radius: 10px;">
+        <h3 style="color: #667eea; margin-bottom: 1rem;">🌐 Flask Features Used</h3>
+        <ul style="color: #666; line-height: 1.8;">
+            <li><strong>Routing:</strong> <code>@app.route()</code> decorators</li>
+            <li><strong>HTTP Methods:</strong> GET and POST handling</li>
+            <li><strong>Template Rendering:</strong> <code>render_template()</code></li>
+            <li><strong>Form Processing:</strong> <code>request.form</code></li>
+            <li><strong>URL Generation:</strong> <code>url_for()</code></li>
+            <li><strong>Redirects:</strong> <code>redirect()</code></li>
+        </ul>
+    </div>
+    
+    <div style="background: rgba(116, 75, 162, 0.1); padding: 1.5rem; border-radius: 10px;">
+        <h3 style="color: #764ba2; margin-bottom: 1rem;">🎨 Jinja2 Template Features</h3>
+        <ul style="color: #666; line-height: 1.8;">
+            <li><strong>Template Inheritance:</strong> <code>extends</code> and <code>blocks</code></li>
+            <li><strong>Variable Rendering:</strong> <code>{%raw%}{{ variable }}{%endraw%}</code></li>
+            <li><strong>Control Structures:</strong> <code>{%raw%}{% if %}{%endraw%}</code>, <code>{%raw%}{% for %}{%endraw%}</code></li>
+            <li><strong>Filters:</strong> Data transformation in templates</li>
+            <li><strong>URL Generation:</strong> <code>{%raw%}{{ url_for() }}{%endraw%}</code> in templates</li>
+            <li><strong>Form State:</strong> Preserving form data</li>
+        </ul>
+    </div>
+</div>
+
+<div style="background: rgba(0, 150, 136, 0.1); padding: 1.5rem; border-radius: 10px; margin: 2rem 0;">
+    <h3 style="color: #333; margin-bottom: 1rem;">🚀 Learning Objectives Achieved</h3>
+    <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div style="color: #666;">
+            <strong style="color: #333;">✓ Web Framework Basics</strong><br>
+            Understanding Flask application structure and request handling
+        </div>
+        <div style="color: #666;">
+            <strong style="color: #333;">✓ HTML & Forms</strong><br>
+            Creating interactive forms with various input types
+        </div>
+        <div style="color: #666;">
+            <strong style="color: #333;">✓ Jinja2 Templating</strong><br>
+            Dynamic content rendering and template inheritance
+        </div>
+        <div style="color: #666;">
+            <strong style="color: #333;">✓ Form Processing</strong><br>
+            Handling user input and generating personalized responses
+        </div>
+    </div>
+</div>
+
+<div style="background: rgba(255, 193, 7, 0.1); padding: 1.5rem; border-radius: 10px; margin: 2rem 0;">
+    <h3 style="color: #333; margin-bottom: 1rem;">💼 Application Structure</h3>
+    <pre style="background: rgba(0, 0, 0, 0.05); padding: 1rem; border-radius: 5px; overflow-x: auto; font-size: 0.9rem; color: #666;">
+flask_greeting_app/
+├── app.py                 # Main Flask application
+├── templates/
+│   ├── base.html         # Base template with common layout
+│   ├── index.html        # Home page with greeting form
+│   ├── greeting.html     # Greeting results page
+│   └── about.html        # This about page
+└── static/               # Static files (CSS, JS, images)
+    </pre>
+</div>
+
+<div style="background: rgba(233, 30, 99, 0.1); padding: 1.5rem; border-radius: 10px; margin: 2rem 0;">
+    <h3 style="color: #333; margin-bottom: 1rem;">🔧 How to Run This Application</h3>
+    <ol style="color: #666; line-height: 1.8;">
+        <li><strong>Install Flask:</strong> <code>pip install flask</code></li>
+        <li><strong>Save the code:</strong> Create the files as shown in the structure above</li>
+        <li><strong>Run the app:</strong> <code>python app.py</code></li>
+        <li><strong>Visit:</strong> Open <code>http://localhost:5000</code> in your browser</li>
+    </ol>
+</div>
+
+<div style="text-align: center; margin-top: 2rem;">
+    <a href="{{ url_for('home') }}" class="btn">Back to Greeting Form 🏠</a>
+</div>
+{% endblock %}

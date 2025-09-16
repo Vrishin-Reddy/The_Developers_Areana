@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Hello {{ name }}! - Flask Greeting App{% endblock %}
+
+{% block content %}
+<h1>🎊 Your Personalized Greeting 🎊</h1>
+
+<div class="success" style="text-align: center; font-size: 1.3rem; font-weight: bold;">
+    {{ greeting }}
+</div>
+
+<div style="background: rgba(116, 75, 162, 0.1); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+    <h3 style="color: #333; margin-bottom: 1rem;">✨ Greeting Details:</h3>
+    <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div>
+            <strong>Your Name:</strong> <span style="color: #667eea;">{{ name }}</span>
+        </div>
+        <div>
+            <strong>Current Time Greeting:</strong> <span style="color: #667eea;">{{ time_greeting }}</span>
+        </div>
+        <div>
+            <strong>Generated At:</strong> <span style="color: #667eea;">{{ moment().format('MMMM Do YYYY, h:mm:ss a') if moment else 'Now' }}</span>
+        </div>
+    </div>
+</div>
+
+<div style="background: rgba(102, 126, 234, 0.1); padding: 1.5rem; border-radius: 10px; margin: 1.5rem 0;">
+    <h3 style="color: #333; margin-bottom: 1rem;">🔧 Behind the Scenes (What Just Happened):</h3>
+    <ol style="color: #666; line-height: 1.6;">
+        <li><strong>Form Submission:</strong> Your browser sent a POST request to the <code>/greet</code> route</li>
+        <li><strong>Data Processing:</strong> Flask received your name and greeting preference</li>
+        <li><strong>Template Rendering:</strong> Jinja2 populated this template with your personalized data</li>
+        <li><strong>Dynamic Content:</strong> The greeting was generated based on your selection and current time</li>
+    </ol>
+</div>
+
+<div style="text-align: center; margin-top: 2rem;">
+    <a href="{{ url_for('home') }}" class="btn">Try Another Greeting 🔄</a>
+    <a href="{{ url_for('about') }}" class="btn btn-secondary">Learn More About This App 📚</a>
+</div>
+
+<div style="margin-top: 2rem; padding: 1rem; background: rgba(0, 150, 136, 0.1); border-radius: 8px;">
+    <h4 style="color: #333; margin-bottom: 0.5rem;">💡 Flask Concepts Demonstrated:</h4>
+    <div style="color: #666; font-size: 0.9rem; display: grid; gap: 0.5rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        <span>✓ Template Inheritance</span>
+        <span>✓ Variable Rendering</span>
+        <span>✓ URL Generation</span>
+        <span>✓ Form Processing</span>
+        <span>✓ Conditional Logic</span>
+        <span>✓ Python Integration</span>
+    </div>
+</div>
+{% endblock %}
